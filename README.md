@@ -1,2 +1,0 @@
-# ReactNative
-Learning React Native
