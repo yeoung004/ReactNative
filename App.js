@@ -8,7 +8,7 @@ export default function App() {
   const API_KEY = 'c5a740626d4627d2b84d0b0049f41c77';
   const [city, setCity] = useState("loading...")
   const [country, setCountry] = useState("loading...")
-  const [days, setDays] = useState("loading...");
+  const [days, setDays] = useState([]);
   const requirePermission = async () => {
     const { granted } = await Location.requestForegroundPermissionsAsync();
     const { coords: { latitude, longitude } } = await Location.getCurrentPositionAsync();
@@ -51,8 +51,8 @@ export default function App() {
           </View>
         ) : (
           days.map((day, index)=>
-            <View id={index} style={styles.day}>
-              <Text style={styles.date}>{date.getMonth()}/{date.getDay() + index}</Text>
+            <View key={index} id={index} style={styles.day}>
+              <Text style={styles.date}>{new Date(day.dt * 1000).toString().substring(0, 10)}</Text>
               <Text style={styles.temp}>{Math.round(day.temp.day)}&#186;C</Text>
               <Text style={styles.info}>{day.weather[0].main}</Text>
               <Image style={styles.icon} source={{uri: `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}}></Image>

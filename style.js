@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     },
     place: {
       paddingTop: 10,
-      flex: 0.8,
+      flex: 0.4,
       justifyContent: "center",
       backgroundColor: "tomato",
       shadowColor: "#000",
@@ -22,14 +22,14 @@ export const styles = StyleSheet.create({
       paddingLeft: 30,
     },
     country: {
-      lineHeight: 140,
-      flex: 1,
+      lineHeight: 100,
+      flex: 0.5,
       color: "whitesmoke",
-      fontSize: 70,
+      fontSize: 50,
     },
     city: {
-      lineHeight: 50,
-      flex: 1,
+      lineHeight: 30,
+      flex: 0.3,
       color: "whitesmoke",
       fontSize: 30,
     },
@@ -42,18 +42,21 @@ export const styles = StyleSheet.create({
       alignItems: "center"
     },
     temp: {
-      flex: 1,
+      lineHeight:80,
+      flex: 0.15,
       fontSize: 80
     },
     info: {
-      flex: 1,
+      flex: 0.2,
       fontSize: 40
     },
     date: {
       fontSize: 30
     },
     icon: {
+      flex:0.1,
       width:100,
-      height:100
+      height:100,
+      bottom:50
     }
   })
