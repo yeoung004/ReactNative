@@ -3,25 +3,29 @@ const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
+  },
+  setting:{
+    color:'white',
+    left:10,
+    top:10
   },
   loading: {
-    marginVertical:SCREEN_WIDTH/3,
+    marginVertical: SCREEN_WIDTH / 3,
     width: SCREEN_WIDTH,
     alignItems: "center",
   },
-  loadingText:{
+  loadingText: {
+    flex:1,
     fontFamily: 'sans-serif-thin',
-    color:'white',
-    fontSize:50,
+    color: 'white',
+    fontSize: 50,
   },
-  background:{
-    resizeMode:'cover',
-    width:SCREEN_WIDTH,
-    height:SCREEN_HEIGHT,
+  background: {
+    alignSelf:'flex-end'
   },
   place: {
-    paddingVertical:50,
+    paddingVertical: 20,
     alignItems: "center",
   },
   city: {
@@ -41,15 +45,33 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   letter: {
+    fontWeight:'bold',
     fontFamily: 'sans-serif-thin',
     color: 'white',
     fontSize: 23,
-    padding:20,
+    padding: 20,
+  },
+  temps: {
+    flexDirection: 'row'
+  },
+  current: {
+    fontFamily: 'sans-serif-thin',
+    color: 'white',
+    fontSize: 60
+  },
+  records: {
+    paddingLeft: 10,
+    justifyContent: 'center'
   },
   temp: {
     fontFamily: 'sans-serif-thin',
     color: 'white',
-    fontSize: 80
+    fontSize: 25
+  },
+  unit: {
+    fontFamily: 'sans-serif-thin',
+    color: 'white',
+    fontSize: 10
   },
   info: {
     fontFamily: 'sans-serif-thin',
@@ -59,12 +81,10 @@ export const styles = StyleSheet.create({
   date: {
     fontFamily: 'sans-serif-thin',
     color: 'white',
-    fontSize: 30
+    fontSize: 20
   },
   icon: {
-    fontFamily: 'sans-serif-thin',
-    color: 'white',
-    width: 100,
-    height: 100,
+    width: SCREEN_WIDTH / 3,
+    height: SCREEN_HEIGHT / 12,
   }
 })
