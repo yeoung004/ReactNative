@@ -38,18 +38,40 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
   },
+  list :{
+    paddingHorizontal:10,
+    paddingVertical:5,
+    alignSelf:'center',
+    width: SCREEN_WIDTH / 1.2,
+    borderWidth:1,
+    borderColor:'white',
+    fontSize:15,
+  },
+  toDos:{
+    height:SCREEN_HEIGHT / 7,
+    alignItems:'center',
+  },
+  toDo:{
+    flexDirection:'row',
+    width: SCREEN_WIDTH / 1.2,
+    justifyContent:'space-between',
+    alignItems:'center',
+    paddingHorizontal:10,
+    paddingVertical:5,
+    borderBottomColor:'gray',
+    borderBottomWidth:1,
+  },
+  toDoDetail:{
+    color:'white',
+    fontSize:20,
+    width:SCREEN_WIDTH/1.4
+  },
   weather: {
+    top:SCREEN_WIDTH / 20
   },
   day: {
     width: SCREEN_WIDTH,
     alignItems: "center",
-  },
-  letter: {
-    fontWeight:'bold',
-    fontFamily: 'sans-serif-thin',
-    color: 'white',
-    fontSize: 23,
-    padding: 20,
   },
   temps: {
     flexDirection: 'row'
