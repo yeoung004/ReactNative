@@ -19,7 +19,6 @@ import { Feather } from '@expo/vector-icons';
 function getBackColors() {
   const date = new Date();
   let hour = date.getHours();
-  hour = 20;
   let backGroundColors;
   if (hour >= 5 && hour <= 6) {
     backGroundColors = ['#ffaf7b', '#d76d77', '#382162'];
@@ -37,7 +36,6 @@ function getBackColors() {
 function getBackImg() {
   const date = new Date();
   let hour = date.getHours();
-  hour = 20;
   let backGroundImg;
   if (hour >= 5 && hour <= 6) {
     backGroundImg = require('./assets/image/back_day_break.png');
@@ -56,7 +54,7 @@ function getDate(time) {
   const date = new Date(time);
   const week = date.toDateString().substring(0, 3);
   const day = date.toDateString().substring(8, 10);
-  const month = date.getMonth();
+  const month = date.getMonth() + 1;
 
   return month + '/' + day + ' ' + week
 };
@@ -109,6 +107,7 @@ export default function App() {
   useEffect(() => {
     loadToDos();
     requirePermission();
+
   }, []);
 
   const addToDo = async () => {
@@ -157,7 +156,7 @@ export default function App() {
               <View style={styles.toDos}>
                 <ScrollView>
                   {Object.keys(toDos).map(key =>
-                    <View style={styles.toDo}>
+                    <View style={styles.toDo} key={key}>
                       <Text style={styles.toDoDetail}>{toDos[key].text}</Text>
                       <TouchableOpacity onPress={() => deleteToDos(key)}>
                         <Text>

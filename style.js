@@ -46,6 +46,7 @@ export const styles = StyleSheet.create({
     borderWidth:1,
     borderColor:'white',
     fontSize:15,
+    color:'white'
   },
   toDos:{
     height:SCREEN_HEIGHT / 7,
