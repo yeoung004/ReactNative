@@ -57,7 +57,7 @@ function getDate(time) {
   const month = date.getMonth() + 1;
 
   return month + '/' + day + ' ' + week
-};
+}
 
 const STORAGE_KEY = '@toDos';
 
@@ -85,6 +85,7 @@ export default function App() {
     setCity(location[0].city);
     setCountry(location[0].country);
     setDays(dailyWeathers.daily);
+    await loadToDos();
 
     if (!granted) {
       setCity("Undefinded");
@@ -105,9 +106,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    loadToDos();
-    requirePermission();
-
+    requirePermission()
   }, []);
 
   const addToDo = async () => {
@@ -155,7 +154,7 @@ export default function App() {
                 returnKeyType="done" />
               <View style={styles.toDos}>
                 <ScrollView>
-                  {Object.keys(toDos).map(key =>
+                  {toDos != null ? Object.keys(toDos).map(key =>
                     <View style={styles.toDo} key={key}>
                       <Text style={styles.toDoDetail}>{toDos[key].text}</Text>
                       <TouchableOpacity onPress={() => deleteToDos(key)}>
@@ -164,7 +163,7 @@ export default function App() {
                         </Text>
                       </TouchableOpacity>
                     </View>
-                  )}
+                  ) : null}
                 </ScrollView>
               </View>
               <ScrollView

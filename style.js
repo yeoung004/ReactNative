@@ -11,12 +11,11 @@ export const styles = StyleSheet.create({
     top:10
   },
   loading: {
-    marginVertical: SCREEN_WIDTH / 3,
+    marginVertical: SCREEN_WIDTH / 2,
     width: SCREEN_WIDTH,
     alignItems: "center",
   },
   loadingText: {
-    flex:1,
     fontFamily: 'sans-serif-thin',
     color: 'white',
     fontSize: 50,
@@ -31,7 +30,8 @@ export const styles = StyleSheet.create({
   city: {
     fontFamily: 'sans-serif-thin',
     color: 'white',
-    fontSize: 80,
+    paddingVertical: 30,
+    fontSize: 50,
   },
   country: {
     fontFamily: 'sans-serif-thin',
